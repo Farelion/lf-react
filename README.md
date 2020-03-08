@@ -1,4 +1,8 @@
 
+work in progress
+
+#[Live](https://lootfinder.netlify.com/) </br>
+
 #### Idea:
 Refresh old project https://github.com/Farelion/lf but in react. </br>
 
