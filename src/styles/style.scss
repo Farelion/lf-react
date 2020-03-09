@@ -1,0 +1,124 @@
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    color: #D7D7D8;
+}
+
+.main{
+    min-height: 100vh;
+    background-color: #161719;
+    .main-big-text{
+        color: #d7d7d8;
+        font-size: 15vw;
+        text-align: center;
+        padding-top: 5rem;
+        margin: 0;
+    }
+    .main-small-text{
+        color: #949294;
+        font-size: 1.5vw;
+        text-align: center;
+        padding-bottom: 9rem;
+        margin: 0;
+    }
+    .filter-controls-wrapper{
+        width: 90%;
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 2rem 0;
+        padding-bottom: 12rem;
+        .filter-item{
+            width: 100%;
+            margin-bottom: 5px;
+            .left-text{
+                display: inline-block;
+                text-align: center;
+                width: 100px;
+            }
+            .buttons{
+                display: inline;
+                button{
+                    background-color: #1d1f21;
+                    border: 1px solid rgba(28,36,43,.6);
+                    border-radius: 4px;
+                    height: 30px;
+                    min-width: 100px;
+                    font-size: 20px;
+                    margin: 5px;
+                    cursor: pointer;
+                    position: relative;
+                    p{  
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        pointer-events: none;
+                        color: #fff;
+                        margin: 0;
+                    }
+                }
+                button:focus {
+                    outline:0;
+                }
+            }
+        }
+    }
+    .dungeons-wrapper{
+        width: 90%;
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 2rem 0;
+        padding-bottom: 12rem;
+        .dungeons{
+            .dungeon{
+                display: flex;
+                flex-direction: column;
+                padding: 1.5rem 1.75rem;
+                background-color: #1d1f21;
+                border: 1px rgba(28,36,43,.6);
+                border-radius: 6px;
+                margin-top: 2rem;
+                .dungeon-header{
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    .header-text{
+                        font-weight: 700;
+                        font-size: 1.5rem;
+                        margin-left: 1rem;
+                        color: #D7D7D8;
+                    }
+                }
+                .dungeon-items{
+                    margin-top: 2rem;
+                    .item{
+                        align-items: flex-start;
+                        margin-bottom: 1.5rem;
+                        a{
+                            display: flex;
+                            align-items: center;
+                            color: inherit;
+                            text-decoration: none;
+                            span{
+                                font-weight: 700;
+                                letter-spacing: .75px;
+                                margin-left: .75rem;
+                                font-size: .875rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        width: 100%;
+        height: 150px;
+        background-color: #101112;
+    }
+}
+
+
+
+
+

@@ -3,29 +3,33 @@ import React from 'react';
 
 function ml(props){
 
-return <div className="ml">
-    {
-    props.dungeons.ml.map((item,i) => {
-        return <div key={i}>
-
-        <a 
-        href={"https://www.wowhead.com/item=" + item.itemId}
-        data-wowhead={"item=" + item.itemId}
-        stats={
-                item.stats.map((stats,i) => {
-                return stats.statName
-                }) 
-            }
-        item-type={item.itemInvType}
-        item-sub-class={item.itemSubClass}
-        item-class={item.itemClass}
-        >{item.itemName}</a>
-
+return <div className="ml dungeon">
+    <div className="dungeon-header">
+        <div className="header-text">The MOTHERLODE!!</div>
     </div>
-        
 
-    })
-    }
+    <div className="dungeon-items">
+        {
+        props.dungeons.ml.map((item,i) => {
+            return <div className="item" key={i}>
+
+            <a 
+            href={"https://www.wowhead.com/item=" + item.itemId}
+            data-wowhead={"item=" + item.itemId}
+            stats={
+                    item.stats.map((stats,i) => {
+                    return stats.statName
+                    }) 
+                }
+            item-type={item.itemInvType}
+            item-sub-class={item.itemSubClass}
+            item-class={item.itemClass}
+            >{item.itemName}</a>
+
+        </div>
+        })
+        }
+    </div>
 </div>
 
 }
