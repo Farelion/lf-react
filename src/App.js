@@ -11,16 +11,112 @@ import Tos from './dungeons/bfa/tos.js'
 import Under from './dungeons/bfa/under.js'
 import Wm from './dungeons/bfa/wm.js'
 
+
 var data = require('./db/db.json');
 var dungeons = data.dungeons;
+console.log(dungeons)
+const result1 = dungeons.ad.filter(itemClass => "Haste");
+console.log(result1);
+
+
 
 class App extends React.Component {
     constructor(props) {
       super(props);
 
       this.state = {
+        stats: [],
+        itemClass: [],
+        itemSubClass: [],
+        itemType: []
       };
     }
+
+
+    statChange = (e) => {
+            // checking if we should remove clicked value or add
+            if( this.state.stats.includes(e) ){
+
+              // find index of e and splice it from array, state copy to not work on state other way than setState
+              var index = this.state.stats.indexOf(e);
+              var stateCopy = this.state.stats
+              stateCopy.splice(index, 1)
+              var stateSpliced = stateCopy
+              this.setState({
+                stats: stateSpliced
+              })
+      
+            } else{
+              // just add e to existing array
+              this.setState(prevState => ({
+                stats: [...prevState.stats, e]
+              }))
+            }
+    }
+
+    classChange = (e) => {
+      // checking if we should remove clicked value or add
+      if( this.state.itemClass.includes(e) ){
+
+        // find index of e and splice it from array, state copy to not work on state other way than setState
+        var index = this.state.itemClass.indexOf(e);
+        var stateCopy = this.state.itemClass
+        stateCopy.splice(index, 1)
+        var stateSpliced = stateCopy
+        this.setState({
+          itemClass: stateSpliced
+        })
+
+      } else{
+        // just add e to existing array
+        this.setState(prevState => ({
+          itemClass: [...prevState.itemClass, e]
+        }))
+      }
+}
+
+    subClassChange = (e) => {
+            // checking if we should remove clicked value or add
+            if( this.state.itemSubClass.includes(e) ){
+
+              // find index of e and splice it from array, state copy to not work on state other way than setState
+              var index = this.state.itemSubClass.indexOf(e);
+              var stateCopy = this.state.itemSubClass
+              stateCopy.splice(index, 1)
+              var stateSpliced = stateCopy
+              this.setState({
+                itemSubClass: stateSpliced
+              })
+      
+            } else{
+              // just add e to existing array
+              this.setState(prevState => ({
+                itemSubClass: [...prevState.itemSubClass, e]
+              }))
+            }
+    }
+
+    itemType = (e) => {
+      // checking if we should remove clicked value or add
+      if( this.state.itemType.includes(e) ){
+
+        // find index of e and splice it from array, state copy to not work on state other way than setState
+        var index = this.state.itemType.indexOf(e);
+        var stateCopy = this.state.itemType
+        stateCopy.splice(index, 1)
+        var stateSpliced = stateCopy
+        this.setState({
+          itemType: stateSpliced
+        })
+
+      } else{
+        // just add e to existing array
+        this.setState(prevState => ({
+          itemType: [...prevState.itemType, e]
+        }))
+      }
+}
+
 
     render(){
         return <div className="main">
@@ -32,45 +128,45 @@ class App extends React.Component {
               <div className="filter-item statistics">
                 <div className="left-text">Statistics:</div>
                 <div className="buttons">
-                  <button><p>Critical Strike</p></button>
-                  <button><p>Haste</p></button>
-                  <button><p>Mastery</p></button>
-                  <button><p>Versatility</p></button>
+                  <button id="crit" value="Critical Strike" onClick={((e) => {this.statChange(e.target.value); })}><p>Critical Strike</p></button>
+                  <button id="haste" value="Haste" onClick={((e) => {this.statChange(e.target.value); })}><p>Haste</p></button>
+                  <button id="mastery" value="Mastery" onClick={((e) => {this.statChange(e.target.value); })}><p>Mastery</p></button>
+                  <button id="vers" value="Versatility" onClick={((e) => {this.statChange(e.target.value); })}><p>Versatility</p></button>
                 </div>
               </div>
 
               <div className="filter-item item-type">
                 <div className="left-text">Item type:</div>
                 <div className="buttons">
-                  <button><p>Weapon</p></button>
-                  <button><p>Armor</p></button>
-                  <button><p>Trinket</p></button>
+                  <button value="Weapon" onClick={((e) => this.classChange(e.target.value))}><p>Weapon</p></button>
+                  <button value="Armor" onClick={((e) => this.classChange(e.target.value))}><p>Armor</p></button>
+                  <button value="Trinket" onClick={((e) => this.itemType(e.target.value))}><p>Trinket</p></button>
                 </div>
               </div>
 
               <div className="filter-item armor-class">
                 <div className="left-text">Armor class:</div>
                 <div className="buttons">
-                  <button><p>Cloth</p></button>
-                  <button><p>Leather</p></button>
-                  <button><p>Mail</p></button>
-                  <button><p>Plate</p></button>
+                  <button value="Cloth" onClick={((e) => this.subClassChange(e.target.value))}><p>Cloth</p></button>
+                  <button value="Leather" onClick={((e) => this.subClassChange(e.target.value))}><p>Leather</p></button>
+                  <button value="Mail" onClick={((e) => this.subClassChange(e.target.value))}><p>Mail</p></button>
+                  <button value="Plate" onClick={((e) => this.subClassChange(e.target.value))}><p>Plate</p></button>
                 </div>
               </div>
 
               <div className="filter-item armor-type">
                 <div className="left-text">Armor type:</div>
                 <div className="buttons">
-                  <button><p>Head</p></button>
-                  <button><p>Shoulder</p></button>
-                  <button><p>Cloak</p></button>
-                  <button><p>Chest</p></button>
-                  <button><p>Wrist</p></button>
-                  <button><p>Hands</p></button>
-                  <button><p>Waist</p></button>
-                  <button><p>Legs</p></button>
-                  <button><p>Feet</p></button>
-                  <button><p>Ring</p></button>
+                  <button value="Head" onClick={((e) => this.itemType(e.target.value))}><p>Head</p></button>
+                  <button value="Shoulder" onClick={((e) => this.itemType(e.target.value))}><p>Shoulder</p></button>
+                  <button value="Cloak"onClick={((e) => this.itemType(e.target.value))}><p>Cloak</p></button>
+                  <button value="Chest" onClick={((e) => this.itemType(e.target.value))}><p>Chest</p></button>
+                  <button value="Wrist" onClick={((e) => this.itemType(e.target.value))}><p>Wrist</p></button>
+                  <button value="Hands" onClick={((e) => this.itemType(e.target.value))}><p>Hands</p></button>
+                  <button value="Waist" onClick={((e) => this.itemType(e.target.value))}><p>Waist</p></button>
+                  <button value="Legs" onClick={((e) => this.itemType(e.target.value))}><p>Legs</p></button>
+                  <button value="Feet" onClick={((e) => this.itemType(e.target.value))}><p>Feet</p></button>
+                  <button value="Finger" onClick={((e) => this.itemType(e.target.value))}><p>Ring</p></button>
                 </div>
               </div>
 
@@ -104,7 +200,7 @@ class App extends React.Component {
 
             <div className="dungeons-wrapper">
               <div className="dungeons">
-                <Ad dungeons={dungeons}/>
+                <Ad dungeons={dungeons} state={this.state}/>
                 <Fh dungeons={dungeons}/>
                 <Kr dungeons={dungeons}/>
                 <Mechagon dungeons={dungeons}/>
