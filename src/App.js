@@ -33,12 +33,14 @@ class App extends React.Component {
       var script = document.createElement('script');
       script.type = 'text/javascript';
       script.src = "https://wow.zamimg.com/widgets/power.js";
-      script.async = false;
+      script.async = true;
       
       document.head.appendChild(script);
     };
+
+    
     componentDidUpdate(){
-      this.$WowheadPower.refreshLinks();
+      window.$WowheadPower.refreshLinks();
     }
 
 
