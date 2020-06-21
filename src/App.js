@@ -35,10 +35,10 @@ class App extends React.Component {
       script.src = "https://wow.zamimg.com/widgets/power.js";
       script.async = true;
       
-      document.head.appendChild(script);
+      document.body.appendChild(script);
     };
 
-    
+
     componentDidUpdate(){
       window.$WowheadPower.refreshLinks();
     }
@@ -205,16 +205,16 @@ class App extends React.Component {
             <div className="dungeons-wrapper">
               <div className="dungeons">
                 <Ad dungeons={dungeons} state={this.state}/>
-                <Fh dungeons={dungeons}/>
-                <Kr dungeons={dungeons}/>
-                <Mechagon dungeons={dungeons}/>
-                <Ml dungeons={dungeons}/>
-                <Sob dungeons={dungeons}/>
-                <Sots dungeons={dungeons}/>
-                <Td dungeons={dungeons}/>
-                <Tos dungeons={dungeons}/>
-                <Under dungeons={dungeons}/>
-                <Wm dungeons={dungeons}/>
+                <Fh dungeons={dungeons} state={this.state}/>
+                <Kr dungeons={dungeons} state={this.state}/>
+                <Mechagon dungeons={dungeons} state={this.state}/>
+                <Ml dungeons={dungeons} state={this.state}/>
+                <Sob dungeons={dungeons} state={this.state}/>
+                <Sots dungeons={dungeons} state={this.state}/>
+                <Td dungeons={dungeons} state={this.state}/>
+                <Tos dungeons={dungeons} state={this.state}/>
+                <Under dungeons={dungeons} state={this.state}/>
+                <Wm dungeons={dungeons} state={this.state}/>
               </div>
             </div>
 
