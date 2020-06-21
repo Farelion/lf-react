@@ -10,3 +10,12 @@ Project is web-app for World of Warcraft game, that helps you find where you can
 
 
 ### Database file creator https://github.com/Farelion/lf-db-creator
+
+
+
+### Todo:
+- button toggle color change
+- fix https://wow.zamimg.com/widgets/power.js doesnt work after filtering items
+- rwd
+- get all categories and make buttons for them
+
