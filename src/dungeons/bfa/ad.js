@@ -10,7 +10,7 @@ return <div className="ad dungeon">
     </div>
 
     <div className="dungeon-items">
-        {
+        { // eslint-disable-next-line
         props.dungeons.ad.map((item,i) => {
                 const itemStats =  
                     item.stats.map((stats,i) => {
@@ -1841,6 +1841,7 @@ return <div className="ad dungeon">
                     } 
                 }
         })
+        
         }
     </div>
     

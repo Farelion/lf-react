@@ -11,13 +11,8 @@ import Tos from './dungeons/bfa/tos.js'
 import Under from './dungeons/bfa/under.js'
 import Wm from './dungeons/bfa/wm.js'
 
-
 var data = require('./db/db.json');
 var dungeons = data.dungeons;
-console.log(dungeons)
-const result1 = dungeons.ad.filter(itemClass => "Haste");
-console.log(result1);
-
 
 
 class App extends React.Component {
@@ -31,6 +26,21 @@ class App extends React.Component {
         itemType: []
       };
     }
+
+
+    componentDidMount(){
+
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = "https://wow.zamimg.com/widgets/power.js";
+      script.async = false;
+      
+      document.head.appendChild(script);
+    };
+    componentDidUpdate(){
+      this.$WowheadPower.refreshLinks();
+    }
+
 
 
     statChange = (e) => {
@@ -73,7 +83,7 @@ class App extends React.Component {
           itemClass: [...prevState.itemClass, e]
         }))
       }
-}
+    }
 
     subClassChange = (e) => {
             // checking if we should remove clicked value or add
@@ -97,25 +107,25 @@ class App extends React.Component {
     }
 
     itemType = (e) => {
-      // checking if we should remove clicked value or add
-      if( this.state.itemType.includes(e) ){
+          // checking if we should remove clicked value or add
+          if( this.state.itemType.includes(e) ){
 
-        // find index of e and splice it from array, state copy to not work on state other way than setState
-        var index = this.state.itemType.indexOf(e);
-        var stateCopy = this.state.itemType
-        stateCopy.splice(index, 1)
-        var stateSpliced = stateCopy
-        this.setState({
-          itemType: stateSpliced
-        })
+            // find index of e and splice it from array, state copy to not work on state other way than setState
+            var index = this.state.itemType.indexOf(e);
+            var stateCopy = this.state.itemType
+            stateCopy.splice(index, 1)
+            var stateSpliced = stateCopy
+            this.setState({
+              itemType: stateSpliced
+            })
 
-      } else{
-        // just add e to existing array
-        this.setState(prevState => ({
-          itemType: [...prevState.itemType, e]
-        }))
-      }
-}
+          } else{
+            // just add e to existing array
+            this.setState(prevState => ({
+              itemType: [...prevState.itemType, e]
+            }))
+          }
+    }
 
 
     render(){
@@ -173,26 +183,18 @@ class App extends React.Component {
               <div className="filter-item weapon-type">
                 <div className="left-text">Weapon type:</div>
                 <div className="buttons">
-                  <button><p>One-hand</p></button>
-                  <button><p>Two-hand</p></button>
-                  <button><p>Off-hand</p></button>
+                  <button value="One-hand" onClick={((e) => this.itemType(e.target.value))}><p>One-hand</p></button>
+                  <button value="Ranged" onClick={((e) => this.itemType(e.target.value))}><p>Ranged</p></button>
+                  <button value="Two-Hand" onClick={((e) => this.itemType(e.target.value))}><p>Two-hand</p></button>
+                  <button value="Held In Off-hand" onClick={((e) => this.itemType(e.target.value))}><p>Off-hand</p></button>
                 </div>
               </div>
 
               <div className="filter-item weapon-class">
                 <div className="left-text">Weapon class:</div>
                 <div className="buttons">
-                  <button><p>Mace</p></button>
-                  <button><p>Axe</p></button>
-                </div>
-              </div>
-
-              <div className="filter-item trinket-type">
-                <div className="left-text">Trinket type:</div>
-                <div className="buttons">
-                  <button><p>Agility</p></button>
-                  <button><p>Intellect</p></button>
-                  <button><p>Strength</p></button>
+                  <button value="Mace" onClick={((e) => this.subClassChange(e.target.value))}><p>Mace</p></button>
+                  <button value="Axe" onClick={((e) => this.subClassChange(e.target.value))}><p>Axe</p></button>
                 </div>
               </div>
 
