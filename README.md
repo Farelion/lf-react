@@ -15,7 +15,7 @@ Project is web-app for World of Warcraft game, that helps you find where you can
 
 ### Todo:
 - button toggle color change
-- fix https://wow.zamimg.com/widgets/power.js doesnt work after filtering items
+- fix link hover box showing on right
 - rwd
 - get all categories and make buttons for them
 
