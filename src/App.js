@@ -56,11 +56,11 @@ class App extends React.Component {
 
 
     componentDidUpdate(){
-      // refrehing links after rerendering of dungeons items 
+      //// refrehing links after rerendering of dungeons items 
       window.$WowheadPower.refreshLinks();
 
 
-
+      //// adding class to hide dungeons when no items were found in that dungeon
       let dungeonItemsWrap = document.querySelectorAll(".dungeon-items");
       dungeonItemsWrap.forEach(function(elem) {
         if(elem.hasChildNodes()){
