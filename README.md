@@ -14,7 +14,6 @@ Project is web-app for World of Warcraft game, that helps you find where you can
 
 
 ### Todo:
-- button toggle color change
 - rwd
 - get all categories and make buttons for them
 - hide dungeon if no items inside
