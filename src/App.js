@@ -214,7 +214,7 @@ class App extends React.Component {
               <div className="filter-item weapon-type">
                 <div className="left-text">Weapon type:</div>
                 <div className="buttons">
-                  <button value="One-hand" onClick={((e) => this.itemType(e.target.value))}><p>One-hand</p></button>
+                  <button value="One-Hand" onClick={((e) => this.itemType(e.target.value))}><p>One-hand</p></button>
                   <button value="Ranged" onClick={((e) => this.itemType(e.target.value))}><p>Ranged</p></button>
                   <button value="Two-Hand" onClick={((e) => this.itemType(e.target.value))}><p>Two-hand</p></button>
                   <button value="Held In Off-hand" onClick={((e) => this.itemType(e.target.value))}><p>Off-hand</p></button>
