@@ -21,6 +21,7 @@ return <div className="ad dungeon">
                 var classLen = 0;
                 var itemTypelen = 0;
 
+                
                 if (!(props.state.stats.length === 0)){
 
                     if ( props.state.stats.length === 1 ){

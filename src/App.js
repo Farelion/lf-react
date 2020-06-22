@@ -15,6 +15,9 @@ import Wm from './dungeons/bfa/wm.js'
 var data = require('./db/db.json');
 var dungeons = data.dungeons;
 
+console.log(data.dungeons.length)
+
+
 
 class App extends React.Component {
     constructor(props) {
@@ -200,7 +203,7 @@ class App extends React.Component {
                 <div className="buttons">
                   <button value="Head" onClick={((e) => this.itemType(e.target.value))}><p>Head</p></button>
                   <button value="Shoulder" onClick={((e) => this.itemType(e.target.value))}><p>Shoulder</p></button>
-                  <button value="Cloak"onClick={((e) => this.itemType(e.target.value))}><p>Cloak</p></button>
+                  <button value="Back"onClick={((e) => this.itemType(e.target.value))}><p>Cloak</p></button>
                   <button value="Chest" onClick={((e) => this.itemType(e.target.value))}><p>Chest</p></button>
                   <button value="Wrist" onClick={((e) => this.itemType(e.target.value))}><p>Wrist</p></button>
                   <button value="Hands" onClick={((e) => this.itemType(e.target.value))}><p>Hands</p></button>
@@ -215,17 +218,29 @@ class App extends React.Component {
                 <div className="left-text">Weapon type:</div>
                 <div className="buttons">
                   <button value="One-Hand" onClick={((e) => this.itemType(e.target.value))}><p>One-hand</p></button>
-                  <button value="Ranged" onClick={((e) => this.itemType(e.target.value))}><p>Ranged</p></button>
                   <button value="Two-Hand" onClick={((e) => this.itemType(e.target.value))}><p>Two-hand</p></button>
-                  <button value="Held In Off-hand" onClick={((e) => this.itemType(e.target.value))}><p>Off-hand</p></button>
+                  <button value="Ranged" onClick={((e) => this.itemType(e.target.value))}><p>Ranged</p></button>
+                  <button value="Off Hand" onClick={((e) => this.itemType(e.target.value))}><p>Off Hand</p></button>
+                  <button value="Held In Off-hand" onClick={((e) => this.itemType(e.target.value))}><p>Held In Off-hand</p></button>
                 </div>
               </div>
 
               <div className="filter-item weapon-class">
                 <div className="left-text">Weapon class:</div>
                 <div className="buttons">
+                  <button value="Dagger" onClick={((e) => this.subClassChange(e.target.value))}><p>Dagger</p></button>
+                  <button value="Sword" onClick={((e) => this.subClassChange(e.target.value))}><p>Sword</p></button>
                   <button value="Mace" onClick={((e) => this.subClassChange(e.target.value))}><p>Mace</p></button>
                   <button value="Axe" onClick={((e) => this.subClassChange(e.target.value))}><p>Axe</p></button>
+                  <button value="Warglaives" onClick={((e) => this.subClassChange(e.target.value))}><p>Warglaives</p></button>
+                  <button value="Fist Weapon" onClick={((e) => this.subClassChange(e.target.value))}><p>Fist Weapon</p></button>
+                  <button value="Polearm" onClick={((e) => this.subClassChange(e.target.value))}><p>Polearm</p></button>
+                  <button value="Staff" onClick={((e) => this.subClassChange(e.target.value))}><p>Staff</p></button>
+                  <button value="Bow" onClick={((e) => this.subClassChange(e.target.value))}><p>Bow</p></button>
+                  <button value="Crossbow" onClick={((e) => this.subClassChange(e.target.value))}><p>Crossbow</p></button>
+                  <button value="Gun" onClick={((e) => this.subClassChange(e.target.value))}><p>Gun</p></button>
+                  <button value="Wand" onClick={((e) => this.subClassChange(e.target.value))}><p>Wand</p></button>
+                  <button value="Shield" onClick={((e) => this.subClassChange(e.target.value))}><p>Shield</p></button>
                 </div>
               </div>
 
