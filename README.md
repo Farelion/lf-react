@@ -15,4 +15,3 @@ Project is web-app for World of Warcraft game, that helps you find where you can
 
 ### Todo:
 - rwd
-- get all categories and make buttons for them
