@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Ad from './dungeons/bfa/ad.js'
 import Fh from './dungeons/bfa/fh.js'
 import Kr from './dungeons/bfa/kr.js'
@@ -46,13 +47,10 @@ class App extends React.Component {
       // addeventlisteners to buttons
       buttons.forEach(function(elem) {
         elem.addEventListener('click', () => {
-
-          const thatButton = elem
-          thatButton.classList.toggle("clicked")
+          elem.classList.toggle("clicked")
 
         });
       });
-
 
     };
 
@@ -60,6 +58,18 @@ class App extends React.Component {
     componentDidUpdate(){
       // refrehing links after rerendering of dungeons items 
       window.$WowheadPower.refreshLinks();
+
+
+
+      let dungeonItemsWrap = document.querySelectorAll(".dungeon-items");
+      dungeonItemsWrap.forEach(function(elem) {
+        if(elem.hasChildNodes()){
+          elem.parentNode.classList.remove('no-items')
+        }
+        else{
+          elem.parentNode.classList.add('no-items')
+        }
+      });
     }
 
 

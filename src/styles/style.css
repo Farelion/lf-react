@@ -119,6 +119,9 @@ body {
   margin-left: 0.75rem;
   font-size: 0.875rem;
 }
+.main .dungeons-wrapper .dungeons .no-items {
+  display: none;
+}
 .main footer {
   width: 100%;
   height: 150px;
