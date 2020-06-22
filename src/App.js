@@ -29,17 +29,36 @@ class App extends React.Component {
 
 
     componentDidMount(){
-
+      // //adding wowhead tooltip script
       var script = document.createElement('script');
       script.type = 'text/javascript';
       script.src = "https://wow.zamimg.com/widgets/power.js";
       script.async = true;
       
       document.body.appendChild(script);
+
+
+
+      //// adding toggle class to control buttons
+      // select all buttons
+      let buttons = document.querySelectorAll("button");
+
+      // addeventlisteners to buttons
+      buttons.forEach(function(elem) {
+        elem.addEventListener('click', () => {
+
+          const thatButton = elem
+          thatButton.classList.toggle("clicked")
+
+        });
+      });
+
+
     };
 
 
     componentDidUpdate(){
+      // refrehing links after rerendering of dungeons items 
       window.$WowheadPower.refreshLinks();
     }
 

@@ -6,6 +6,10 @@ body{
     color: #D7D7D8;
 }
 
+
+
+
+
 .main{
     min-height: 100vh;
     background-color: #161719;
@@ -49,16 +53,26 @@ body{
                     margin: 5px;
                     cursor: pointer;
                     position: relative;
+                    transition: ease-out 0.3s;
                     p{  
                         padding-left: 15px;
                         padding-right: 15px;
                         pointer-events: none;
                         color: #fff;
                         margin: 0;
+                        transition: ease-out 0.3s;
                     }
                 }
                 button:focus {
                     outline:0;
+                }
+                .clicked{
+                    background-color: #fff;
+                    transition: ease-out 0.3s;
+                    p{
+                        color: #1d1f21;
+                        transition: ease-out 0.3s;
+                    }
                 }
             }
         }

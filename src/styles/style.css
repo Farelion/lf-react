@@ -53,6 +53,7 @@ body {
   margin: 5px;
   cursor: pointer;
   position: relative;
+  transition: ease-out 0.3s;
 }
 .main .filter-controls-wrapper .filter-item .buttons button p {
   padding-left: 15px;
@@ -60,9 +61,18 @@ body {
   pointer-events: none;
   color: #fff;
   margin: 0;
+  transition: ease-out 0.3s;
 }
 .main .filter-controls-wrapper .filter-item .buttons button:focus {
   outline: 0;
+}
+.main .filter-controls-wrapper .filter-item .buttons .clicked {
+  background-color: #fff;
+  transition: ease-out 0.3s;
+}
+.main .filter-controls-wrapper .filter-item .buttons .clicked p {
+  color: #1d1f21;
+  transition: ease-out 0.3s;
 }
 .main .dungeons-wrapper {
   width: 90%;
