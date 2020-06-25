@@ -58,7 +58,9 @@ class App extends React.Component {
       //// header hide dungeon
       let dungeonHeader = document.querySelectorAll(".dungeon-header");
 
-      // addeventlisteners to headerr
+
+
+      // addeventlisteners to dungeon-header, so we can collapse clicked dungeon
       dungeonHeader.forEach(function(elem) {
         elem.addEventListener('click', () => {
           if(elem.parentNode.classList.contains("hidden")){
