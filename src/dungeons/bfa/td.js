@@ -7,6 +7,10 @@ return <div className="td dungeon">
 
     <div className="dungeon-header">
         <div className="header-text">Tol Dagor</div>
+        <div className="header-arrow">
+            <span></span>
+            <span></span>
+        </div>
     </div>
 
     <div className="dungeon-items">

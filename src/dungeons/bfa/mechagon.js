@@ -7,6 +7,10 @@ return <div className="mechagon dungeon">
 
     <div className="dungeon-header">
         <div className="header-text">Mechagon</div>
+        <div className="header-arrow">
+            <span></span>
+            <span></span>
+        </div>
     </div>
 
     <div className="dungeon-items">

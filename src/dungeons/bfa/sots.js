@@ -7,6 +7,10 @@ return <div className="sots dungeon">
 
     <div className="dungeon-header">
         <div className="header-text">Shrine of the Storms</div>
+        <div className="header-arrow">
+            <span></span>
+            <span></span>
+        </div>
     </div>
 
     <div className="dungeon-items">

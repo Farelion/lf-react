@@ -55,6 +55,27 @@ class App extends React.Component {
         });
       });
 
+      //// header hide dungeon
+      let dungeonHeader = document.querySelectorAll(".dungeon-header");
+
+      // addeventlisteners to headerr
+      dungeonHeader.forEach(function(elem) {
+        elem.addEventListener('click', () => {
+          if(elem.parentNode.classList.contains("hidden")){
+            elem.querySelector(".header-arrow").classList.remove('active')
+            elem.parentNode.querySelector(".dungeon-items").classList.remove('hidden')
+            elem.parentNode.classList.remove('hidden')
+          }
+          else{
+            elem.querySelector(".header-arrow").classList.add('active')
+            elem.parentNode.querySelector(".dungeon-items").classList.add('hidden')
+            elem.parentNode.classList.add('hidden')
+          }
+
+        });
+      });
+
+
     };
 
 

@@ -7,6 +7,10 @@ return <div className="ad dungeon">
 
     <div className="dungeon-header">
         <div className="header-text">Atal'Dazar</div>
+        <div className="header-arrow">
+            <span></span>
+            <span></span>
+        </div>
     </div>
 
     <div className="dungeon-items">

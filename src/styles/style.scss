@@ -91,12 +91,48 @@ body{
                 margin-top: 2rem;
                 .dungeon-header{
                     display: flex;
-                    align-items: flex-start;
-                    justify-content: space-between;
+                    position: relative;
+                    cursor: pointer;
+                    .header-arrow{
+                        width: 25px;
+                        height: 25px;
+                        position: relative;
+                        top:12px;
+                        span{
+                            top: 4px;
+                            position: absolute;
+                            width: 16px;
+                            height: 3px;
+                            background-color: #fff;
+                            display: inline-block;
+                            transition: all .2s ease;
+                            &:first-of-type {
+                                left: 0;
+                                transform: scale(.9) rotate(-45deg);
+                              }
+                        
+                            &:last-of-type {
+                                right: 0;
+                                transform: scale(.9) rotate(45deg);
+                            }
+                        }
+                        &.active {
+                            span {
+                              &:first-of-type {
+                                transform: scale(.9) rotate(45deg);
+                              }
+                      
+                              &:last-of-type {
+                                transform: scale(.9) rotate(-45deg);
+                              }
+                            }
+                          }
+                    }
                     .header-text{
                         font-weight: 700;
                         font-size: 1.5rem;
                         margin-left: 1rem;
+                        margin-right: 2rem;
                         color: #D7D7D8;
                     }
                 }
@@ -118,6 +154,12 @@ body{
                         }
                     }
                 }
+                .hidden{
+                    display:none;
+                }
+            }
+            .hidden{
+                height: 30px;
             }
             .no-items{
                 display:none;

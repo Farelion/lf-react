@@ -7,6 +7,10 @@ return <div className="under dungeon">
 
     <div className="dungeon-header">
         <div className="header-text">Underrot</div>
+        <div className="header-arrow">
+            <span></span>
+            <span></span>
+        </div>
     </div>
 
     <div className="dungeon-items">

@@ -7,6 +7,10 @@ return <div className="ml dungeon">
 
     <div className="dungeon-header">
         <div className="header-text">The MOTHERLODE!!</div>
+        <div className="header-arrow">
+            <span></span>
+            <span></span>
+        </div>
     </div>
 
     <div className="dungeon-items">

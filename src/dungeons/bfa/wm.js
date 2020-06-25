@@ -7,6 +7,10 @@ return <div className="wm dungeon">
 
     <div className="dungeon-header">
         <div className="header-text">Waycrest Manor</div>
+        <div className="header-arrow">
+            <span></span>
+            <span></span>
+        </div>
     </div>
 
     <div className="dungeon-items">
