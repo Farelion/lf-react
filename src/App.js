@@ -1,16 +1,14 @@
 import React from 'react';
 
-import Ad from './dungeons/bfa/ad.js'
-import Fh from './dungeons/bfa/fh.js'
-import Kr from './dungeons/bfa/kr.js'
-import Mechagon from './dungeons/bfa/mechagon.js'
-import Ml from './dungeons/bfa/ml'
-import Sob from './dungeons/bfa/sob'
-import Sots from './dungeons/bfa/sots.js'
-import Td from './dungeons/bfa/td.js'
-import Tos from './dungeons/bfa/tos.js'
-import Under from './dungeons/bfa/under.js'
-import Wm from './dungeons/bfa/wm.js'
+import Dos from './dungeons/sl/dos.js'
+import Hoa from './dungeons/sl/hoa.js'
+import Mots from './dungeons/sl/mots.js'
+import Pf from './dungeons/sl/pf.js'
+import Sd from './dungeons/sl/sd.js'
+import Soa from './dungeons/sl/soa.js'
+import Nw from './dungeons/sl/nw.js'
+import Top from './dungeons/sl/top.js'
+
 
 var data = require('./db/db.json');
 var dungeons = data.dungeons;
@@ -271,17 +269,14 @@ class App extends React.Component {
 
             <div className="dungeons-wrapper">
               <div className="dungeons">
-                <Ad dungeons={dungeons} state={this.state}/>
-                <Fh dungeons={dungeons} state={this.state}/>
-                <Kr dungeons={dungeons} state={this.state}/>
-                <Mechagon dungeons={dungeons} state={this.state}/>
-                <Ml dungeons={dungeons} state={this.state}/>
-                <Sob dungeons={dungeons} state={this.state}/>
-                <Sots dungeons={dungeons} state={this.state}/>
-                <Td dungeons={dungeons} state={this.state}/>
-                <Tos dungeons={dungeons} state={this.state}/>
-                <Under dungeons={dungeons} state={this.state}/>
-                <Wm dungeons={dungeons} state={this.state}/>
+                <Dos dungeons={dungeons} state={this.state}/>
+                <Hoa dungeons={dungeons} state={this.state}/>
+                <Mots dungeons={dungeons} state={this.state}/>
+                <Pf dungeons={dungeons} state={this.state}/>
+                <Sd dungeons={dungeons} state={this.state}/>
+                <Soa dungeons={dungeons} state={this.state}/>
+                <Nw dungeons={dungeons} state={this.state}/>
+                <Top dungeons={dungeons} state={this.state}/>
               </div>
             </div>
 
